@@ -2,10 +2,11 @@
 
 console.log(`hello mom`);
 
-const secret = Math.trunc(Math.random() * 20) + 1;
+let secret = Math.trunc(Math.random() * 20) + 1;
 console.log(secret);
 
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
@@ -19,13 +20,14 @@ document.querySelector(".check").addEventListener("click", function () {
 
     document.querySelector(".result").textContent = "✔️ you win!";
     document.querySelector(".number").textContent = secret;
-    document.querySelector(".highscore").textContent = "🥇 HIGHSCORE: " + score;
-    document.querySelector(".check").textContent = "retry";
 
-    // reset
-    document.querySelector(".check").addEventListener("click", function () {
-      window.location.reload();
-    });
+    // setting the highscore
+    if (score > highscore) {
+      highscore = score;
+      highscore++;
+      document.querySelector(".highscore").textContent =
+        "🥇 highscore: " + highscore;
+    }
   }
 
   // when number is too low
@@ -49,4 +51,15 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".score").textContent = "🏆 score: 0";
     }
   }
+});
+
+// retry
+
+document.querySelector(".retry").addEventListener("click", function () {
+  score = 20;
+  secret = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector(".result").textContent = "start guessing...";
+  document.querySelector(".score").textContent = "🏆 score: " + score;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
 });
