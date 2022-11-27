@@ -15,7 +15,9 @@ document.querySelector(".check").addEventListener("click", function () {
 
     // when user's answer is correct
   } else if (guess === secret) {
-    document.querySelector(".result").textContent = "you win!";
+    // window.open("https://www.pornhub.com", "_blank");
+
+    document.querySelector(".result").textContent = "✔️ you win!";
     document.querySelector(".number").textContent = secret;
     document.querySelector(".highscore").textContent = "🥇 HIGHSCORE: " + score;
     document.querySelector(".check").textContent = "retry";
@@ -29,7 +31,7 @@ document.querySelector(".check").addEventListener("click", function () {
   // when number is too low
   else if (guess < secret) {
     if (score > 0) {
-      document.querySelector(".result").textContent = "too low number!";
+      document.querySelector(".result").textContent = "❌ too low number!";
       document.querySelector(".score").textContent = "🏆 score: " + score--;
     } else {
       document.querySelector(".result").textContent = "🤡 you lose! 🤡";
@@ -40,7 +42,7 @@ document.querySelector(".check").addEventListener("click", function () {
   // when number is too high
   else if (guess > secret) {
     if (score > 0) {
-      document.querySelector(".result").textContent = "too high number!";
+      document.querySelector(".result").textContent = "❌ too high number!";
       document.querySelector(".score").textContent = "🏆 score: " + score--;
     } else {
       document.querySelector(".result").textContent = "🤡 you lose! 🤡";
