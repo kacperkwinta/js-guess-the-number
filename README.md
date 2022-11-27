@@ -1,2 +1,4 @@
 # js-guess-the-number
-DOM exercises 
+DOM exercises in funny way
+
+https://kacperkwinta.github.io/js-guess-the-number/
