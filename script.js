@@ -24,7 +24,6 @@ document.querySelector(".check").addEventListener("click", function () {
     // setting the highscore
     if (score > highscore) {
       highscore = score;
-      highscore++;
       document.querySelector(".highscore").textContent =
         "🥇 highscore: " + highscore;
     }
