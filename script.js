@@ -57,6 +57,7 @@ document.querySelector(".check").addEventListener("click", function () {
 document.querySelector(".retry").addEventListener("click", function () {
   score = 20;
   secret = Math.trunc(Math.random() * 20) + 1;
+  console.log(secret);
   document.querySelector(".result").textContent = "start guessing...";
   document.querySelector(".score").textContent = "🏆 score: " + score;
   document.querySelector(".number").textContent = "?";
