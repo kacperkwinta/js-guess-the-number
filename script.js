@@ -31,9 +31,10 @@ document.querySelector(".check").addEventListener("click", function () {
 
   // when number is too low
   else if (guess < secret) {
-    if (score > 0) {
+    if (score > 1) {
       document.querySelector(".result").textContent = "❌ too low number!";
-      document.querySelector(".score").textContent = "🏆 score: " + score--;
+      score--;
+      document.querySelector(".score").textContent = "🏆 score: " + score;
     } else {
       document.querySelector(".result").textContent = "🤡 you lose! 🤡";
       document.querySelector(".score").textContent = "🏆 score: 0";
@@ -42,9 +43,10 @@ document.querySelector(".check").addEventListener("click", function () {
 
   // when number is too high
   else if (guess > secret) {
-    if (score > 0) {
+    if (score > 1) {
       document.querySelector(".result").textContent = "❌ too high number!";
-      document.querySelector(".score").textContent = "🏆 score: " + score--;
+      score--;
+      document.querySelector(".score").textContent = "🏆 score: " + score;
     } else {
       document.querySelector(".result").textContent = "🤡 you lose! 🤡";
       document.querySelector(".score").textContent = "🏆 score: 0";
